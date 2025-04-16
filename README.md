@@ -9,7 +9,9 @@ The main purpose of this project is to improve my C programming skills, particul
 ## Features
 
 - Basic directory traversal
-- Visualize files and directories in a tree structure
+- Differentiate directory and files
+- Directory and files counts.
+- ~~visualising tree structure (upcoming...)~~
 
 ## Technologies Used
 
