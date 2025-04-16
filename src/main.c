@@ -20,7 +20,7 @@ void read_directory(char* file_name, dirInfo *dir) {
         return;
     }
     struct dirent *dirent_struct;
-    char *filebuf = malloc(PATH_MAX);  
+    char *filebuf = malloc(PATH_MAX * sizeof(char));  
     if (filebuf == NULL) {
         printf("Memory allocation failed!\n");
         exit(1);  
@@ -50,12 +50,16 @@ void read_directory(char* file_name, dirInfo *dir) {
 int main(int argc, char *argv[]) {  
     char *folder_name;
     if (argv[1]) {
-        folder_name = malloc(strlen(argv[1]+ 1) * sizeof(char));
+        folder_name = malloc(strlen(argv[1])+1 * sizeof(char));
+        if (folder_name == NULL) {
+            printf("Memory allocation failed!\n");
+            return 1;
+        }        
         strcpy(folder_name,argv[1]);
     }
     else {
         char *curr_path = ".";
-        folder_name = malloc(strlen(curr_path)+1);
+        folder_name = malloc(strlen(curr_path)+1 * sizeof(char));
         if (folder_name == NULL) {
             printf("Memory allocation failed!\n");
             return 1;  
