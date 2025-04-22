@@ -13,12 +13,4 @@ The main purpose of this project is to improve my C programming skills, particul
 - Directory and files counts.
 - visualising tree structure (upcoming...)
 
-## Technologies Used
 
-- **Programming Language**: C
-
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/C-file-visualiser-cmd.git
