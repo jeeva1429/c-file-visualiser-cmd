@@ -64,8 +64,8 @@ void read_directory(char* file_name, directory_info *dir, int directory_level) {
             if(S_ISDIR(file_stat.st_mode)) {
                 printf("%s├──%s%s%s\n", formatting_space, COLOR_BOLD_BLUE, dirent_struct->d_name, COLOR_OFF);
                 dir->dirCount++;
-                directory_level = directory_level + 1;
-                 (filebuf, dir, directory_level);
+                directory_level++;
+                read_directory(filebuf, dir, directory_level);
             }
             // \└──
             else {
