@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "file_info.h"
 #include "file_visualiser.h"
-
+#define COLOR_BOLD_BLUE "\033[1;34m"
 
 int main(int argc, char *argv[]) {  
     char *folder_name;
@@ -27,6 +27,9 @@ int main(int argc, char *argv[]) {
     // initial directory and files count
     directory_info direct_info = {0,0};
     int directory_level = 0;
+    if(strlen(folder_name) > 0) {
+        printf("%s\n",folder_name);
+    }
     // traverse directory and print the contents
     read_directory(folder_name, &direct_info, directory_level);
     // print the directories and files count
